@@ -31,3 +31,8 @@ TEST_F(QueueTests, When_FrontMethodIsUsed_Expect_Five)
     queueTested.push(5);
     EXPECT_EQ(queueTested.front(), 5);
 }
+TEST_F(QueueTests, When_BackMethodIsUsed_Expect_Five)
+{
+    queueTested.push(5);
+    EXPECT_EQ(queueTested.back(), 5);
+}

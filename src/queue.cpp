@@ -33,3 +33,8 @@ int Queue::front()
 {
     return *frontPtr;
 }
+
+int Queue::back()
+{
+    return *backPtr;
+}
