@@ -12,3 +12,9 @@ TEST_F(QueueTests, When_CreatedNewQueue_Expected_TwoPointersToStartAndEndOfTheQu
 {
     EXPECT_EQ(queueTested.isEmpty(), true);
 }
+
+TEST_F(QueueTests, When_AddenNewElement_Expect_QueueIsNotEmpty)
+{
+    queueTested.push(5);
+    EXPECT_EQ(queueTested.isEmpty(), false);
+}

@@ -8,3 +8,9 @@ bool Queue::isEmpty()
 {
 return !frontPtr && !backPtr;
 }
+
+void Queue::push(int value)
+{
+    frontPtr = new int (value);
+    backPtr = new int (value);
+}
