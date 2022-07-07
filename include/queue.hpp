@@ -5,6 +5,7 @@ class Queue
 public:
 //constructors
 Queue();
+~Queue();
 
 //methods
 bool isEmpty();

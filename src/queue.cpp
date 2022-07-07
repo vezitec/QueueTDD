@@ -3,6 +3,15 @@
 
 // constructors
 Queue::Queue() : frontPtr{nullptr}, backPtr{nullptr} {}
+//destructors
+Queue::~Queue()
+{
+    while (!isEmpty())
+    {
+        pop();
+        std::cout<<"Removed one Node from the dynamic memory"<<std::endl;
+    }
+}
 
 // methods
 bool Queue::isEmpty()
@@ -46,7 +55,7 @@ void Queue::pop()
 
       if (size == 0)
     {
-        std::cout<<"Queue is already empty.";
+        std::cout<<"Queue is already empty."<<std::endl;
     }
 
     size--;
