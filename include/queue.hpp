@@ -10,6 +10,7 @@ Queue();
 bool isEmpty();
 void push(int value);
 void pop();
+int front();
 
 
 private:

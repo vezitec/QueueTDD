@@ -26,8 +26,8 @@ TEST_F(QueueTests, When_AddenNewElementAndRemoved_Expect_QueueIsEmpty)
     EXPECT_EQ(queueTested.isEmpty(), true);
 }
 
-// TEST_F(QueueTests, When_FrontMethodIsUsed_Expect_Five)
-// {
-//     queueTested.push(5);
-//     EXPECT_EQ(queueTested.front(), 5);
-// }
+TEST_F(QueueTests, When_FrontMethodIsUsed_Expect_Five)
+{
+    queueTested.push(5);
+    EXPECT_EQ(queueTested.front(), 5);
+}

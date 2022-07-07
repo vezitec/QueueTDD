@@ -28,3 +28,8 @@ void Queue::pop()
         backPtr = nullptr;
     }
 }
+
+int Queue::front()
+{
+    return *frontPtr;
+}
