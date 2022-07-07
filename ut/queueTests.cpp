@@ -5,11 +5,10 @@
 class QueueTests : public ::testing::Test
 {
 public:
-
+    Queue queueTested;
 };
 
-TEST_F(QueueTests, Given_NewQueue_When_Initialization_Then_TwoPtrsAreNullptr)
+TEST_F(QueueTests, When_CreatedNewQueue_Expected_TwoPointersToStartAndEndOfTheQueueAreNullPtr)
 {
-
+    EXPECT_EQ(queueTested.isEmpty(), true);
 }
-
