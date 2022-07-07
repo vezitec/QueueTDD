@@ -1,40 +1,63 @@
 #include "queue.hpp"
+#include <iostream>
 
-//constructors
-Queue::Queue(): frontPtr{nullptr}, backPtr{nullptr}{}
+// constructors
+Queue::Queue() : frontPtr{nullptr}, backPtr{nullptr} {}
 
 // methods
 bool Queue::isEmpty()
 {
-return !frontPtr && !backPtr;
+    return !frontPtr && !backPtr;
 }
 
 void Queue::push(int value)
 {
-    frontPtr = new int (value);
-    backPtr = new int (value);
+
+    if (isEmpty())
+    {
+        frontPtr = new Node(value);
+        backPtr = frontPtr;
+    }
+
+    else
+    {
+        backPtr->nextNodePtr = new Node(value);
+        backPtr = backPtr->nextNodePtr;
+    }
+
+    size++;
 }
 void Queue::pop()
 {
-    if (frontPtr)
+    if (size > 1)
+    {
+        Node *currentPtr = frontPtr;
+        frontPtr = frontPtr->nextNodePtr;
+        delete currentPtr;
+        currentPtr = nullptr;
+    }
+    if (size == 1)
     {
         delete frontPtr;
-        frontPtr = nullptr;
+        frontPtr =nullptr;
+        backPtr =nullptr;
+
     }
 
-    if (backPtr)
+      if (size == 0)
     {
-        delete backPtr;
-        backPtr = nullptr;
+        std::cout<<"Queue is already empty.";
     }
+
+    size--;
 }
 
 int Queue::front()
 {
-    return *frontPtr;
+    return frontPtr->m_value;
 }
 
 int Queue::back()
 {
-    return *backPtr;
+    return backPtr->m_value;
 }

@@ -1,4 +1,4 @@
-
+#include "node.hpp"
 
 class Queue
 {
@@ -16,6 +16,7 @@ int front();
 int back();
 
 private:
-int * frontPtr;
-int * backPtr;
+Node * frontPtr;
+Node * backPtr;
+int size{};
 };
